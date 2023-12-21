@@ -43,6 +43,14 @@ async function checkWeather(city) {
 
 }
 
+// Add an event listener for "keydown" on the searchBox
+searchBox.addEventListener("keydown", (event) => {
+  // Check if the key pressed is "Enter" (key code 13)
+  if (event.keyCode === 13) {
+    checkWeather(searchBox.value);
+  }
+});
+
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
 })
